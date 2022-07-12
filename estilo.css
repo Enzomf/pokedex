@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+header{
+    background-color: #FF0000;
+    width: 100%;
+    height: 20vh;
+    font-family: 'Pokemon Solid', sans-serif;
+                                                
+}
+
+header #content{
+    width: 1200px;
+    margin:0 auto;
+    border: black solid 1px;
+    height: 20vh;
+    display: grid;
+    place-items: center;
+    background-image: url(images/pokebola.png);
+    background-repeat:no-repeat ;
+    background-size: 10%;
+}
+
+header h1{
+    text-align: center;
+    color: #d1b919;
+    font-size: 40px;
+    letter-spacing: 6px;
+    text-shadow: 2px 2px #3B4CCA;
+}
+
+#container{
+
+    width: 1200px;
+    margin: 0 auto;
+    border: black solid 1px;
+    height: 100vh;
+    margin-top: 10px;
+}
+
+#pesquisaC{
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;border:rgba(172, 169, 169, 0.87);
+    background-color: #d3d3d3;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;  
+}
+
+#pesquisaC svg{
+    width: 25px;
+    cursor: pointer;
+}
+
+#pesquisa{
+    
+   width: 90%;
+   background-color: transparent;
+   border: transparent;
+   outline: none;
+  font-size: 18px;
+  color: #3B4CCA;
+    
+}
+
+#pesquisar{
+    background-color: transparent;
+    border: none;
+}
+
+#pesquisar:hover svg{
+    color: #FFF;
+}
+
+
+#pokemonArea{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:30px ;
+    justify-content: space-around;
+}
+
+.pokemonCard{
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #d3d3d3b2;
+    border-radius: 10px;
+}
+
+.pokemonCard h3{
+    color: #3B4CCA;
+    text-shadow: 1px 1px 1px black;
+
+}
+
+img.pokeImage{
+    width: 100%;
+}
+
+
+
+
