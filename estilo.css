@@ -1,31 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Arial", sans-serif;
 }
 
-header{
-    background-color: #FF0000;
+header {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
     width: 100%;
     height: 20vh;
     font-family: 'Pokemon Solid', sans-serif;
-                                                
+
 }
 
-header #content{
-    width: 1200px;
-    margin:0 auto;
-    border: black solid 1px;
+body{
+    background: url("https://cutewallpaper.org/21/pokemon-repeating-background/Free-Pokemon-Backgrounds-wallpaper-1280x960-75218.jpg") fixed center;
+}
+
+header #content {
+    width: 80%;
+    margin: 0 auto;
+
     height: 20vh;
     display: grid;
     place-items: center;
-    background-image: url(images/pokebola.png);
-    background-repeat:no-repeat ;
-    background-size: 10%;
+
 }
 
-header h1{
+header h1 {
     text-align: center;
     color: #d1b919;
     font-size: 40px;
@@ -33,82 +36,189 @@ header h1{
     text-shadow: 2px 2px #3B4CCA;
 }
 
-#container{
+#container {
 
-    width: 1200px;
+    width: 80%;
     margin: 0 auto;
-    border: black solid 1px;
-    height: 100vh;
+    /* border: black solid 1px; */
+    min-height: 70vh;
+
     margin-top: 10px;
 }
 
-#pesquisaC{
+#pesquisaC {
     width: 40%;
     margin: 0 auto;
-    text-align: center;border:rgba(172, 169, 169, 0.87);
+    text-align: center;
+    border: rgba(172, 169, 169, 0.87);
     background-color: #d3d3d3;
     border-radius: 20px;
     outline: none;
-    padding: 10px 20px; 
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
 }
 
-#pesquisaC svg{
+#pesquisaC svg {
     width: 25px;
     cursor: pointer;
 }
 
-#pesquisa{
-    
-   width: 90%;
-   background-color: transparent;
-   border: transparent;
-   outline: none;
-  font-size: 18px;
-  color: #3B4CCA;
-    
+#pesquisa {
+
+    width: 90%;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+    font-size: 18px;
+    color: #3B4CCA;
+
 }
 
-#pesquisar{
+#pesquisar {
     background-color: transparent;
     border: none;
+    
 }
 
-#pesquisar:hover svg{
+#pesquisar:hover svg {
     color: #FFF;
+    transition: 0.5s;
 }
 
 
-#pokemonArea{
+
+#pokemonArea {
     display: flex;
     flex-wrap: wrap;
-    margin-top:30px ;
-    justify-content: space-around;
+    margin-top: 30px;
+    justify-content: space-between;
 }
 
-.pokemonCard{
-    width: 150px;
-    height: 200px;
+.pokemonCard {
+    width: 280px;
+    height: 380px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #d3d3d3b2;
+    padding: 40px;
+    background-color: #d3d3d3ec;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.pokemonCard h3{
-    color: #3B4CCA;
-    text-shadow: 1px 1px 1px black;
-
+.pokemonCard:hover{
+    position: relative;
+    bottom: 10px;
 }
 
-img.pokeImage{
+
+.pokemonCard h4 {
+    text-align: right;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.pokemonCard h3 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+img.pokeImage {
     width: 100%;
 }
 
 
 
 
+footer{
+    
+    width: 100%;
+    height: 10vh;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+
+
+
+
+
+.status{
+ margin-top: 20px;
+    display: flex;
+ gap:10px;
+}
+
+.tipo {
+
+    min-width: 50px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    background-color: green;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+
+.fire{
+    background-color: #FF0000;
+}
+
+.grass{
+
+    background-color: green;
+
+}
+
+.ground{
+    background-color: brown;
+}
+
+.electric{
+    background-color: rgb(245, 245, 16);
+}
+
+.flying{
+    background-color: rgb(130, 130, 243);
+}
+
+.normal{
+    background-color: rgb(161, 175, 165);
+}
+
+.water{
+    background-color: rgb(41, 41, 238);
+}
+
+.poison{
+    background-color: rgb(161, 11, 161);
+}
+
+.ghost{
+    background-color: rgb(80, 1, 80);
+}
+
+.steel{
+    background-color: rgb(90, 90, 90);
+}
+
+.dragon{
+    background-color: rgb(78, 203, 207);
+}
+
+.bug{
+    background-color: rgb(18, 184, 18);
+}
+
+.rock{
+    background-color: rgb(99, 68, 34);
+}
+
+.ice{
+    background-color: rgb(135, 173, 216);
+}
