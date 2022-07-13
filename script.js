@@ -2,14 +2,31 @@ let PokeApi = `https://pokeapi.co/api/v2/pokemon/`
 
 
 let pokemonList = new Array()
+let ContagemPokemon = 52;
+let minimo = 1
+
+
+
+function carregarMais() {
+    ContagemPokemon += 52
+    pokemonList.forEach(element => {
+        minimo = parseInt(element.id)
+    })
+
+
+
+    getPokemons()
+
+
+}
 
 
 async function getPokemons() {
 
-    document.getElementById("pokemonArea").innerHTML = ""
-    for (let i = 1; i <= 52; i++) {
+    for (let i = minimo; i <= ContagemPokemon; i++) {
         await fetch(PokeApi + i).then(data => data.json().then(resp => { pokemonList.push(resp) }))
     }
+    console.log(pokemonList)
 
     pokemonCard()
 
@@ -20,14 +37,17 @@ function pokemonCard() {
 
     pokemonList.forEach(pokemon => {
 
-        const pokeCArd = document.createElement('div');
+        if (pokemon.id > minimo) {
 
-        pokeCArd.classList.add("pokemonCard")
+            const pokeCArd = document.createElement('div');
+
+            pokeCArd.classList.add("pokemonCard")
 
 
-        pokeCArd.innerHTML = `
-                <div onclick="detalhes(${pokemon.id})">
+            pokeCArd.innerHTML = `
 
+            <div onclick="detalhes(${pokemon.id})">
+            
                 <h4 class="id">N° ${idFormater(pokemon.id)}</h4>
                 <img src="https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png" class="pokeImage">
                 
@@ -36,11 +56,13 @@ function pokemonCard() {
                 <div id ="${pokemon.id}" class="status">    
                 
                 </div>
+                <div class ="detalhes">
+            </div>
                 </div>
                 `
-        document.getElementById("pokemonArea").appendChild(pokeCArd)
-        typeVerifier(pokemon.types, pokemon.id)
-
+            document.getElementById("pokemonArea").appendChild(pokeCArd)
+            typeVerifier(pokemon.types, pokemon.id)
+        }
 
     })
 
@@ -92,15 +114,16 @@ function idFormater(id) {
 
 async function pesquisarPoke() {
 
-    const pesquisa = document.getElementById("pesquisa").value
+    let pesquisa = document.getElementById("pesquisa").value
+    pesquisa = pesquisa.toLowerCase()
     let resultado = Array()
 
     if (pesquisa != "") {
 
 
-        await fetch(PokeApi + pesquisa).then(data => data.json().then(resp => { resultado.push(resp) })).catch(err => { console.log("pokemon não encontrado", err) })
-
         document.getElementById("pokemonArea").innerHTML = ""
+        await fetch(PokeApi + pesquisa).then(data => data.json().then(resp => { resultado.push(resp) })).catch(err => { console.log(err); $("#pokemonArea").html("<h1 class='erro'>Pokemon não encontrado</h1>") })
+
 
         resultado.forEach(pokemon => {
 
@@ -122,10 +145,10 @@ async function pesquisarPoke() {
             </div>
             </div>
             `
-            
+
             document.getElementById("pokemonArea").appendChild(pokeCArd)
             typeVerifier(pokemon.types, pokemon.id)
-            
+
 
 
         })
@@ -133,7 +156,7 @@ async function pesquisarPoke() {
 
 
 
-    } 
+    }
 
 
 }
@@ -143,4 +166,4 @@ async function detalhes(id) {
 }
 
 
-getPokemons()
+getPokemons(1)

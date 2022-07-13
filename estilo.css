@@ -6,16 +6,16 @@
 }
 
 header {
-    background-color: transparent;
-    backdrop-filter: blur(20px);
+    background: rgb(0, 15, 36);
+    background: linear-gradient(330deg, rgba(0, 15, 36, 1) 0%, rgba(9, 51, 121, 1) 36%, rgba(8, 70, 140, 1) 45%, rgba(0, 185, 255, 1) 100%);
     width: 100%;
     height: 20vh;
     font-family: 'Pokemon Solid', sans-serif;
 
 }
 
-body{
-    background: url("https://cutewallpaper.org/21/pokemon-repeating-background/Free-Pokemon-Backgrounds-wallpaper-1280x960-75218.jpg") fixed center;
+body {
+    background: #115db46c;
 }
 
 header #content {
@@ -78,7 +78,7 @@ header h1 {
 #pesquisar {
     background-color: transparent;
     border: none;
-    
+
 }
 
 #pesquisar:hover svg {
@@ -98,6 +98,7 @@ header h1 {
 .pokemonCard {
     width: 280px;
     height: 380px;
+    position: relative;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -107,12 +108,30 @@ header h1 {
     background-color: #d3d3d3ec;
     border-radius: 10px;
     cursor: pointer;
+    overflow: hidden;
 }
 
-.pokemonCard:hover{
+.pokemonCard:hover {
     position: relative;
     bottom: 10px;
 }
+
+.pokemonCard:hover .detalhes {
+      display: inline;
+      animation: details 1s;
+      transition: 1s;
+}
+
+@keyframes  details {
+    to{
+        transform: translateX(0px);
+       
+    }
+    from{
+        transform: translateX(-200px); 
+    }
+}
+
 
 
 .pokemonCard h4 {
@@ -135,8 +154,8 @@ img.pokeImage {
 
 
 
-footer{
-    
+footer {
+
     width: 100%;
     height: 10vh;
     background-color: transparent;
@@ -147,10 +166,10 @@ footer{
 
 
 
-.status{
- margin-top: 20px;
+.status {
+    margin-top: 20px;
     display: flex;
- gap:10px;
+    gap: 10px;
 }
 
 .tipo {
@@ -165,60 +184,115 @@ footer{
 }
 
 
-.fire{
-    background-color: #FF0000;
+.fire {
+    background-color: #ff5e00;
 }
 
-.grass{
+.psychic{
+    background-color: rgb(230, 8, 174);
+}
+
+.grass {
 
     background-color: green;
 
 }
+.fighting{
+    background-color: rgb(255, 0, 0);
+}
 
-.ground{
+.ground {
     background-color: brown;
 }
 
-.electric{
+.electric {
     background-color: rgb(245, 245, 16);
 }
 
-.flying{
+.flying {
     background-color: rgb(130, 130, 243);
 }
 
-.normal{
+.normal {
     background-color: rgb(161, 175, 165);
 }
 
-.water{
+.water {
     background-color: rgb(41, 41, 238);
 }
 
-.poison{
+.poison {
     background-color: rgb(161, 11, 161);
 }
 
-.ghost{
+.ghost {
     background-color: rgb(80, 1, 80);
 }
 
-.steel{
+.steel {
     background-color: rgb(90, 90, 90);
 }
 
-.dragon{
+.dragon {
     background-color: rgb(78, 203, 207);
 }
 
-.bug{
+.bug {
     background-color: rgb(18, 184, 18);
 }
 
-.rock{
+.rock {
     background-color: rgb(99, 68, 34);
 }
 
-.ice{
+.ice {
     background-color: rgb(135, 173, 216);
+}
+
+
+.erro {
+    margin: 0 auto;
+    color: #FFF;
+    text-shadow: 2px 2px #000;
+    display: inline;
+    text-align: center;
+}
+
+#carregarMais {
+
+    width: 150px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    border: #223af1 solid 2px;
+    color: #223af1;
+    height: 30px;
+    line-height: 30px;
+}
+
+#carregarMais:hover {
+    color: #FFF;
+    background-color: #091a9e;
+    transition: 1s;
+    border-color: #091a9e;
+}
+
+#buttonArea {
+
+    text-align: center;
+}
+
+
+.detalhes{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: #d3d3d3;
+    position: absolute;
+    display: none;
+
 }
