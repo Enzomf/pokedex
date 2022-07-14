@@ -157,8 +157,13 @@ img.pokeImage {
 footer {
 
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
     height: 10vh;
-    background-color: transparent;
+    background: rgb(0, 15, 36);
+    background: linear-gradient(330deg, rgba(0, 15, 36, 1) 0%, rgba(9, 51, 121, 1) 36%, rgba(8, 70, 140, 1) 45%, rgba(0, 185, 255, 1) 100%);
     backdrop-filter: blur(20px);
 }
 
@@ -270,6 +275,7 @@ footer {
     color: #223af1;
     height: 30px;
     line-height: 30px;
+    margin-bottom: 30px;
 }
 
 #carregarMais:hover {
