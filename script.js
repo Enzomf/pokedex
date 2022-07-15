@@ -1,5 +1,7 @@
 document.getElementById("pesquisaC").addEventListener("submit", e=>{e.preventDefault()})
 
+console.log("enxo")
+
 let PokeApi = `https://pokeapi.co/api/v2/pokemon/`
 let pokemonList = new Array()
 let ContagemPokemon = 52;
