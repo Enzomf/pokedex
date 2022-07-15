@@ -1,7 +1,5 @@
 document.getElementById("pesquisaC").addEventListener("submit", e=>{e.preventDefault()})
 
-console.log("enxo")
-
 let PokeApi = `https://pokeapi.co/api/v2/pokemon/`
 let pokemonList = new Array()
 let ContagemPokemon = 52;
@@ -56,7 +54,7 @@ function pokemonCard() {
 
             pokeCArd.innerHTML = `
 
-            <div onclick="detalhes(${pokemon.id})">
+            <div>
             
                 <h4 class="id">N° ${idFormater(pokemon.id)}</h4>
                 <img src="https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png" class="pokeImage">
@@ -66,13 +64,16 @@ function pokemonCard() {
                 <div id ="${pokemon.id}" class="status">    
                 
                 </div>
-                    <div class ="detalhes a${pokemon.id}">
+                    <div class ="detalhes" id ="detalhes${pokemon.id}">
+                    <img src ="${pokemon.sprites.front_shiny}">
+
                     </div>
                 </div>
                 `
             document.getElementById("pokemonArea").appendChild(pokeCArd)
             typeVerifier(pokemon.types, pokemon.id)
 
+            detalhes(pokemon.id)
 
         }
 
@@ -173,6 +174,16 @@ async function pesquisarPoke() {
 
 }
 
+
+async function detalhes(id){
+
+    const detalhes = await fetch(ApiEspecies + id)
+    const dataDetalhes = await detalhes.json()
+
+    console.log(dataDetalhes)
+
+
+}
 
 
 
