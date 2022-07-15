@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+header {
+    background: rgb(0, 15, 36);
+    background: linear-gradient(330deg, rgba(0, 15, 36, 1) 0%, rgba(9, 51, 121, 1) 36%, rgba(8, 70, 140, 1) 45%, rgba(0, 185, 255, 1) 100%);
+    width: 100%;
+    height: 20vh;
+    font-family: 'Pokemon Solid', sans-serif;
+
+}
+
+body {
+    background: #115db46c;
+}
+
+header #content {
+    width: 80%;
+    margin: 0 auto;
+
+    height: 20vh;
+    display: grid;
+    place-items: center;
+
+}
+
+header h1 {
+    text-align: center;
+    color: #d1b919;
+    font-size: 40px;
+    letter-spacing: 6px;
+    text-shadow: 2px 2px #3B4CCA;
+}
+
+#container {
+
+    width: 80%;
+    margin: 0 auto;
+    /* border: black solid 1px; */
+    min-height: 70vh;
+
+    margin-top: 10px;
+}
+
+#pesquisaC {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    border: rgba(172, 169, 169, 0.87);
+    background-color: #d3d3d3;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pesquisaC svg {
+    width: 25px;
+    cursor: pointer;
+}
+
+#pesquisa {
+
+    width: 90%;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+    font-size: 18px;
+    color: #3B4CCA;
+
+}
+
+#pesquisar {
+    background-color: transparent;
+    border: none;
+
+}
+
+#pesquisar:hover svg {
+    color: #FFF;
+    transition: 0.5s;
+}
+
+
+
+#pokemonArea {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.pokemonCard {
+    width: 280px;
+    height: 380px;
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #d3d3d3ec;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.pokemonCard:hover {
+    position: relative;
+    bottom: 10px;
+}
+
+.pokemonCard:hover .detalhes {
+      display: inline;
+      animation: details 1s;
+      transition: 1s;
+}
+
+@keyframes  details {
+    to{
+        transform: translateX(0px);
+       
+    }
+    from{
+        transform: translateX(-200px); 
+    }
+}
+
+
+
+.pokemonCard h4 {
+    text-align: right;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.pokemonCard h3 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+img.pokeImage {
+    width: 100%;
+}
+
+
+
+
+footer {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    height: 10vh;
+    background: rgb(0, 15, 36);
+    background: linear-gradient(330deg, rgba(0, 15, 36, 1) 0%, rgba(9, 51, 121, 1) 36%, rgba(8, 70, 140, 1) 45%, rgba(0, 185, 255, 1) 100%);
+    backdrop-filter: blur(20px);
+}
+
+
+
+
+
+.status {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.tipo {
+
+    min-width: 50px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    background-color: green;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+
+.fire {
+    background-color: #ff5e00;
+}
+
+.psychic{
+    background-color: rgb(230, 8, 174);
+}
+
+.grass {
+
+    background-color: green;
+
+}
+.fighting{
+    background-color: rgb(255, 0, 0);
+}
+
+.ground {
+    background-color: brown;
+}
+
+.electric {
+    background-color: rgb(245, 245, 16);
+}
+
+.flying {
+    background-color: rgb(130, 130, 243);
+}
+
+.normal {
+    background-color: rgb(161, 175, 165);
+}
+
+.water {
+    background-color: rgb(41, 41, 238);
+}
+
+.poison {
+    background-color: rgb(161, 11, 161);
+}
+
+.ghost {
+    background-color: rgb(80, 1, 80);
+}
+
+.steel {
+    background-color: rgb(90, 90, 90);
+}
+
+.dragon {
+    background-color: rgb(78, 203, 207);
+}
+
+.bug {
+    background-color: rgb(18, 184, 18);
+}
+
+.rock {
+    background-color: rgb(99, 68, 34);
+}
+
+.ice {
+    background-color: rgb(135, 173, 216);
+}
+
+
+.erro {
+    margin: 0 auto;
+    color: #FFF;
+    text-shadow: 2px 2px #000;
+    display: inline;
+    text-align: center;
+}
+
+#carregarMais {
+
+    width: 150px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    border: #223af1 solid 2px;
+    color: #223af1;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+#carregarMais:hover {
+    color: #FFF;
+    background-color: #091a9e;
+    transition: 1s;
+    border-color: #091a9e;
+}
+
+#buttonArea {
+
+    text-align: center;
+}
+
+
+.detalhes{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: #d3d3d3;
+    position: absolute;
+    display: none;
+
+}

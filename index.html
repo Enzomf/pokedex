@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilo.css">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <title>Pokedex</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div id="content">
+            <h1>Enzo's Pokedex</h1>
+        </div>
+    </header>
+    <div id="container">
+        <main>
+            <form id="pesquisaC">
+                <input type="text" id="pesquisa">
+
+                <button id="pesquisar" onclick="pesquisarPoke()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </form>
+
+
+
+            <div id="pokemonArea">
+
+
+            </div>
+
+        </main>
+        <fo id ="buttonArea">
+            <button id="carregarMais"  onclick="carregarMais()"> Carregar mais</button>
+        </fo>
+
+    </div>
+    <footer>
+        @coded by Enzomf
+
+        <img scr="images/G">
+    </footer>
+</body>
+
+<script src="script.js"></script>
+
+</html>
