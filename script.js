@@ -1,4 +1,4 @@
-document.getElementById("pesquisaC").addEventListener("submit", e=>{e.preventDefault()})
+document.getElementById("pesquisaC").addEventListener("submit", e => { e.preventDefault() })
 
 let PokeApi = `https://pokeapi.co/api/v2/pokemon/`
 let pokemonList = new Array()
@@ -27,9 +27,9 @@ function carregarMais() {
 async function getPokemons() {
 
     for (let i = minimo; i <= ContagemPokemon; i++) {
-  
+
         await fetch(PokeApi + i).then(data => data.json().then(resp => { pokemonList.push(resp) }))
-  
+
     }
     console.log(pokemonList)
 
@@ -40,12 +40,12 @@ async function getPokemons() {
 
 
 function pokemonCard() {
-    
+
     pokemonList.forEach(pokemon => {
-        
-      
+
+
         if (pokemon.id > minimo) {
-           
+
 
 
             const pokeCArd = document.createElement('div');
@@ -65,7 +65,8 @@ function pokemonCard() {
                 
                 </div>
                     <div class ="detalhes" id ="detalhes${pokemon.id}">
-                    <img src ="${pokemon.sprites.front_shiny}">
+                    <img class ="asset-detail"src ="${pokemon.sprites.front_shiny}">
+                    <h3 class="name-detail">${pokemon.name}</h3>
 
                     </div>
                 </div>
@@ -124,7 +125,7 @@ function idFormater(id) {
 
 async function pesquisarPoke() {
 
-    
+
     let pesquisa = document.getElementById("pesquisa").value
     pesquisa = pesquisa.toLowerCase()
     let resultado = Array()
@@ -138,7 +139,7 @@ async function pesquisarPoke() {
 
         resultado.forEach(pokemon => {
 
-        
+
 
             const pokeCArd = document.createElement('div');
 
@@ -175,11 +176,13 @@ async function pesquisarPoke() {
 }
 
 
-async function detalhes(id){
+async function detalhes(id) {
 
     const detalhes = await fetch(ApiEspecies + id)
     const dataDetalhes = await detalhes.json()
 
+
+    document.getElementById(`detalhes${id}`).innerHTML += `<p class="generation">${dataDetalhes.generation.name}</p>    <p class="description">${dataDetalhes.flavor_text_entries[0].flavor_text}</p>`
     console.log(dataDetalhes)
 
 
