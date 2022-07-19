@@ -20,15 +20,15 @@
     <header>
 
         <div id="content">
-            <h1>Enzo's Pokedex</h1>
+            <h1><a href="index.html">Enzo's Pokedex</a></h1>
         </div>
     </header>
     <div id="container">
         <main>
             <form id="pesquisaC" >
-                <input type="text" id="pesquisa">
+                <input placeholder="name or id" type="text" id="pesquisa" autocomplete="off">
 
-                <button id="pesquisar" onclick="pesquisarPoke()">
+                <button id="pesquisar">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -43,11 +43,11 @@
 
 
             </div>
-
+            
         </main>
-        <fo id ="buttonArea">
-            <button id="carregarMais"  onclick="carregarMais()"> Carregar mais</button>
-        </fo>
+        
+        <button id="carregarMais" onclick ="pokemons.loadMore()"> Carregar mais</button>
+        
 
     </div>
     <footer>

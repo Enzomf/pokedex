@@ -30,35 +30,59 @@ header #content {
 
 }
 
-header h1 {
+/* header h1 a{
     text-align: center;
     color: #d1b919;
+    text-decoration: none;
     font-size: 40px;
     letter-spacing: 6px;
     text-shadow: 2px 2px #3B4CCA;
+}
+ */
+
+@media screen and (max-width: 450px) {
+  
+    header h1 a{
+        text-align: center;
+        color: #d1b919;
+        text-decoration: none;
+        font-size: 20px;
+        letter-spacing: 6px;
+        text-shadow: 2px 2px #3B4CCA;
+   
+    }
+
+    #pesquisaC {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        border: rgba(172, 169, 169, 0.87);
+        background-color: #d3d3d3;
+        border-radius: 20px;
+        outline: none;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    #pokemonArea {
+        display: flex;
+        flex-wrap: wrap;
+       justify-content: center;
+       margin-top: 30px;
+    }
+
 }
 
 #container {
 
     width: 80%;
     margin: 0 auto;
-    /* border: black solid 1px; */
+   
     min-height: 70vh;
 
     margin-top: 10px;
-}
-
-#pesquisaC {
-    width: 40%;
-    margin: 0 auto;
-    text-align: center;
-    border: rgba(172, 169, 169, 0.87);
-    background-color: #d3d3d3;
-    border-radius: 20px;
-    outline: none;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
 }
 
 #pesquisaC svg {
@@ -77,6 +101,11 @@ header h1 {
 
 }
 
+#pesquisa::placeholder{
+    text-align: center;
+    opacity: 0.5;
+}
+
 #pesquisar {
     background-color: transparent;
     border: none;
@@ -88,17 +117,18 @@ header h1 {
     transition: 0.5s;
 }
 
+ 
 
-
-#pokemonArea {
+/* #pokemonArea {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
     justify-content: space-between;
-}
+} */
 
 .pokemonCard {
-    width: 280px;
+    width: 22%;
+    min-width: 300px;
     height: 380px;
     position: relative;
     margin-bottom: 30px;
@@ -108,13 +138,14 @@ header h1 {
     align-items: center;
     padding: 40px;
     background-color: #d3d3d3ec;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     overflow: hidden;
 }
 
 .pokemonCard:hover {
     position: relative;
+   
     bottom: 10px;
 }
 
@@ -136,7 +167,7 @@ header h1 {
 
 
 
-.pokemonCard h4 {
+.pokemonCard .id {
     text-align: right;
     font-size: 25px;
     margin-bottom: 15px;
@@ -189,6 +220,42 @@ footer {
     border-radius: 5px;
     padding: 8px;
 }
+
+
+
+#erro {
+    margin: 0 auto;
+    color: #FFF;
+    text-shadow: 2px 2px #000;
+    display: inline;
+    text-align: center;
+}
+
+#carregarMais {
+
+    width: 100px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    border: #223af1 solid 2px;
+    color: #223af1;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 50%;
+   
+}
+
+#carregarMais:hover {
+    color: #FFF;
+    background-color: #091a9e;
+    transition: 1s;
+    border-color: #091a9e;
+}
+
+
+
 
 
 .fire {
@@ -257,79 +324,3 @@ footer {
 }
 
 
-.erro {
-    margin: 0 auto;
-    color: #FFF;
-    text-shadow: 2px 2px #000;
-    display: inline;
-    text-align: center;
-}
-
-#carregarMais {
-
-    width: 150px;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 700;
-    border: #223af1 solid 2px;
-    color: #223af1;
-    height: 30px;
-    line-height: 30px;
-    margin-bottom: 30px;
-}
-
-#carregarMais:hover {
-    color: #FFF;
-    background-color: #091a9e;
-    transition: 1s;
-    border-color: #091a9e;
-}
-
-#buttonArea {
-
-    text-align: center;
-}
-
-
-.detalhes{
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    top:0;
-    left: 0;
-    right: 0;
-    background-color: #d3d3d3;
-    position: absolute;
-    /* display: none; */
-
-}
-
-
-.description{
-
-    font-weight: 700;
-    text-align: justify;
-    position: relative;
-    top:-40px;
-}
-
-.name-detail{
-    position: absolute;
-    top:10px;
-    right:85px;
-    
-    
-}
-
-img.asset-detail{
-   position: relative ;
-   top:200px;
-    width: 100px;
-}
-
-.generation{
-    position: relative;
-    top:190px;
-}
