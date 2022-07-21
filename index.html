@@ -10,7 +10,9 @@
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;700&display=swap" rel="stylesheet">
 
     <title>Pokedex</title>
 </head>
@@ -25,7 +27,7 @@
     </header>
     <div id="container">
         <main>
-            <form id="pesquisaC" >
+            <form id="pesquisaC">
                 <input placeholder="name or id" type="text" id="pesquisa" autocomplete="off">
 
                 <button id="pesquisar">
@@ -43,11 +45,12 @@
 
 
             </div>
-            
+
         </main>
-        
-        <button id="carregarMais" onclick ="pokemons.loadMore()"> Carregar mais</button>
-        
+
+        <div id = "buttonArea">
+            <button id="carregarMais" onclick="pokemons.loadMore()"> Carregar mais</button>
+        </div>
 
     </div>
     <footer>

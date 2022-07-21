@@ -6,6 +6,15 @@
 }
 
 
+#container {
+
+    width: 80%;
+    margin: 0 auto;
+   
+    min-height: 70vh;
+
+    margin-top: 10px;
+}
 
 header {
     background: rgb(0, 15, 36);
@@ -30,15 +39,6 @@ header #content {
 
 }
 
-/* header h1 a{
-    text-align: center;
-    color: #d1b919;
-    text-decoration: none;
-    font-size: 40px;
-    letter-spacing: 6px;
-    text-shadow: 2px 2px #3B4CCA;
-}
- */
 
 @media screen and (max-width: 450px) {
   
@@ -51,7 +51,7 @@ header #content {
         text-shadow: 2px 2px #3B4CCA;
    
     }
-
+    
     #pesquisaC {
         width: 100%;
         margin: 0 auto;
@@ -65,25 +65,72 @@ header #content {
         justify-content: space-between;
         margin-top: 20px;
     }
-
+    
     #pokemonArea {
         display: flex;
         flex-wrap: wrap;
-       justify-content: center;
-       margin-top: 30px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+}
+
+@media  screen and (min-width: 451px) {
+
+    #pesquisaC {
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+        border: rgba(172, 169, 169, 0.87);
+        background-color: #d3d3d3;
+        border-radius: 20px;
+        outline: none;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    
+    header h1 a{
+        text-align: center;
+        color: #d1b919;
+        text-decoration: none;
+        font-size: 40px;
+        letter-spacing: 6px;
+        text-shadow: 2px 2px #3B4CCA;
     }
 
+    #pokemonArea {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-around;
+    gap:20px;
+    
+    }
+
+    .pokemonCard {
+       
+        width: 250px;
+        height: 380px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        background-color: #d3d3d3ec;
+        border-radius: 20px;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    
+    
+    
 }
 
-#container {
-
-    width: 80%;
-    margin: 0 auto;
-   
-    min-height: 70vh;
-
-    margin-top: 10px;
-}
 
 #pesquisaC svg {
     width: 25px;
@@ -119,33 +166,8 @@ header #content {
 
  
 
-/* #pokemonArea {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    justify-content: space-between;
-} */
-
-.pokemonCard {
-    width: 22%;
-    min-width: 300px;
-    height: 380px;
-    position: relative;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    background-color: #d3d3d3ec;
-    border-radius: 20px;
-    cursor: pointer;
-    overflow: hidden;
-}
-
 .pokemonCard:hover {
-    position: relative;
-   
+      
     bottom: 10px;
 }
 
@@ -155,29 +177,26 @@ header #content {
       transition: 1s;
 }
 
-@keyframes  details {
-    to{
-        transform: translateX(0px);
-       
-    }
-    from{
-        transform: translateX(-200px); 
-    }
-}
 
 
 
 .pokemonCard .id {
-    text-align: right;
-    font-size: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 0.5;
+    display: block;
     margin-bottom: 15px;
 }
 
 
 .pokemonCard h3 {
+    
     font-size: 30px;
     text-align: center;
-    margin-top: 10px;
+    font-weight: 400;
+    color: #313131;
+    
 }
 
 img.pokeImage {
@@ -233,7 +252,7 @@ footer {
 
 #carregarMais {
 
-    width: 100px;
+    width: 150px;
     background-color: transparent;
     backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -243,8 +262,15 @@ footer {
     color: #223af1;
     height: 30px;
     line-height: 30px;
-    margin-left: 50%;
+    
+    
    
+}
+
+#buttonArea{
+    width: 100%;
+    text-align: center;
+   margin:20px 0;
 }
 
 #carregarMais:hover {
@@ -257,6 +283,8 @@ footer {
 
 
 
+
+/* estilização por tipo */
 
 .fire {
     background-color: #ff5e00;

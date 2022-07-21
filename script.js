@@ -74,15 +74,15 @@ class Pokemon {
 
                 let pokemonSearch = await fetch(PokeApi + pokemon)
                 this.pokemonSearchData = await pokemonSearch.json();    
-            
+                
             }catch{
-              
+                
                 document.getElementById("pokemonArea").innerHTML=""
                 document.getElementById("pokemonArea").innerHTML="<h1 id='erro'>Pokemon não encontrado</h1>"
-            
+                
             }
             
-
+          
             const pokemonCard = document.createElement('div')
 
             pokemonCard.classList.add("pokemonCard")
@@ -140,6 +140,15 @@ class Pokemon {
         this.minimo += 30
 
         this.getPokemons()
+    }
+
+    pokemonFilter(){
+
+
+        const filter = this.pokemonList.filter(pokemon =>pokemon.types[0].type.name == 'fire')
+        document.getElementById("pokemonArea").innerHTML =""
+
+        this.createCards(filter)
     }
 
 }
