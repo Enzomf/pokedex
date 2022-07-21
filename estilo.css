@@ -95,6 +95,16 @@ header #content {
 
 @media  screen and (min-width: 451px) {
 
+    #carregarMais:hover {
+        color: #FFF;
+        background-color: #091a9e;
+        transition: 1s;
+        border-color: #091a9e;
+    }
+    .pokemonCard:hover {
+      
+        bottom: 10px;
+    }
     #pesquisaC {
         width: 95%;
         margin: 0 auto;
@@ -182,10 +192,7 @@ header #content {
 
  
 
-.pokemonCard:hover {
-      
-    bottom: 10px;
-}
+
 
 .pokemonCard .id {
     text-align: center;
@@ -272,12 +279,7 @@ footer {
    margin:20px 0;
 }
 
-#carregarMais:hover {
-    color: #FFF;
-    background-color: #091a9e;
-    transition: 1s;
-    border-color: #091a9e;
-}
+
 
 
 
@@ -381,6 +383,14 @@ select#filter{
 
 .ice {
     background-color: rgb(135, 173, 216);
+}
+
+.dark{
+    background-color: #000;
+}
+
+.fairy {
+    background-color:rgb(182, 111, 196) ;
 }
 
 
