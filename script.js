@@ -13,7 +13,7 @@ class Pokemon {
         this.maximo = 30;
     }
 
-    async getPokemons() {
+    async getPokemons(controle) {
 
         for (let i = this.minimo; i <= this.maximo; i++) {
 
@@ -24,37 +24,40 @@ class Pokemon {
 
         }
 
+        if(!controle){
         this.createCards(this.pokemonList)
+      
+        }
     }
 
     createCards(pokemonLista) {
 
-    
+
         pokemonLista.map(pokemon => {
 
-            if(pokemon.id >= this.minimo){
-            const pokemonCard = document.createElement('div')
+            if (pokemon.id >= this.minimo) {
+                const pokemonCard = document.createElement('div')
 
-            pokemonCard.classList.add("pokemonCard")
+                pokemonCard.classList.add("pokemonCard")
 
 
-            pokemonCard.innerHTML = `
+                pokemonCard.innerHTML = `
                 
             <div id ="${pokemon.name}">
                 <h3>${pokemon.name}</h3>
                 
                 <span class="id">${this.idFormater(pokemon.id)}</span>            
-                
-                <img src="${pokeImages}${pokemon.id}.png" alt ="${pokemon.name}"class="pokeImage">
-            
+                <div class="imageArea">
+                    <img src="${pokeImages}${pokemon.id}.png" alt ="${pokemon.name}"class="pokeImage">
+                </div>
             
                 
                 </div>
                 `
-            document.getElementById("pokemonArea").appendChild(pokemonCard)
+                document.getElementById("pokemonArea").appendChild(pokemonCard)
 
-            this.typeFormater(pokemon.types, pokemon.name)
-        }
+                this.typeFormater(pokemon.types, pokemon.name)
+            }
         })
 
     }
@@ -67,22 +70,22 @@ class Pokemon {
 
         if (pokemon) {
 
-            document.getElementById("pokemonArea").innerHTML=""
+            document.getElementById("pokemonArea").innerHTML = ""
             document.getElementById("pesquisa").value = ""
 
-            try{
+            try {
 
                 let pokemonSearch = await fetch(PokeApi + pokemon)
-                this.pokemonSearchData = await pokemonSearch.json();    
-                
-            }catch{
-                
-                document.getElementById("pokemonArea").innerHTML=""
-                document.getElementById("pokemonArea").innerHTML="<h1 id='erro'>Pokemon não encontrado</h1>"
-                
+                this.pokemonSearchData = await pokemonSearch.json();
+
+            } catch {
+
+                document.getElementById("pokemonArea").innerHTML = ""
+                document.getElementById("pokemonArea").innerHTML = "<h1 id='erro'>Pokemon não encontrado</h1>"
+
             }
-            
-          
+
+
             const pokemonCard = document.createElement('div')
 
             pokemonCard.classList.add("pokemonCard")
@@ -94,8 +97,9 @@ class Pokemon {
                 
                 <span class="id">${this.idFormater(this.pokemonSearchData.id)}</span>            
                 
-                <img src="${pokeImages}${this.pokemonSearchData.id}.png" alt ="${this.pokemonSearchData.name}"class="pokeImage">
-            
+                <div class ="imageArea">
+                    <img src="${pokeImages}${this.pokemonSearchData.id}.png" alt ="${this.pokemonSearchData.name}"class="pokeImage">
+                </div>
             
                 
                 </div>
@@ -134,7 +138,7 @@ class Pokemon {
         })
     }
 
-    loadMore(){
+    loadMore() {
         console.log("oi")
         this.maximo += 30
         this.minimo += 30
@@ -142,14 +146,26 @@ class Pokemon {
         this.getPokemons()
     }
 
-    pokemonFilter(){
+   async pokemonFilter() {
 
+        let tipo = document.getElementById("filter").value
+        tipo = tipo.toLowerCase()
 
-        const filter = this.pokemonList.filter(pokemon =>pokemon.types[0].type.name == 'fire')
-        document.getElementById("pokemonArea").innerHTML =""
+        this.minimo = 1;
+        this.maximo =150;
 
-        this.createCards(filter)
+        this.pokemonList.length=0
+        await this.getPokemons(1)
+
+        if (tipo) {
+
+            const filter = this.pokemonList.filter(pokemon => pokemon.types[0].type.name == tipo)
+            document.getElementById("pokemonArea").innerHTML = ""
+            
+           filter.length == 0 ?  document.getElementById("pokemonArea").innerHTML = "<h1 class ='erro'> nenhuma correspondencia encontrada nesse intervalo </h1>":this.createCards(filter)
+        }
     }
+
 
 }
 
@@ -159,3 +175,4 @@ let pokemons = new Pokemon()
 window.addEventListener("load", pokemons.getPokemons())
 
 document.getElementById("pesquisaC").addEventListener("submit", e => { e.preventDefault(); pokemons.search() })
+document.getElementById("filtrar").addEventListener("click", w=>{pokemons.pokemonFilter()})

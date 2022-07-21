@@ -26,7 +26,10 @@ header {
 }
 
 body {
-    background: #115db46c;
+
+    background: rgb(0, 15, 36);
+    background: linear-gradient(330deg, rgba(0, 15, 36, 1) 0%, rgba(9, 51, 121, 1) 36%, rgba(8, 70, 140, 1) 45%, rgba(0, 185, 255, 1) 100%) fixed;
+   
 }
 
 header #content {
@@ -71,6 +74,21 @@ header #content {
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 30px;
+    }
+
+    .pokemonCard {
+       
+        width: 250px;
+        height: 380px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+        margin-bottom: 20px;
+        background-color: #d3d3d3ec;
+        border-radius: 20px;
+    
     }
     
 }
@@ -118,12 +136,10 @@ header #content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         padding: 30px;
         background-color: #d3d3d3ec;
         border-radius: 20px;
         cursor: pointer;
-        overflow: hidden;
     }
 
     
@@ -139,7 +155,7 @@ header #content {
 
 #pesquisa {
 
-    width: 90%;
+    width: 100%;
     background-color: transparent;
     border: transparent;
     outline: none;
@@ -171,15 +187,6 @@ header #content {
     bottom: 10px;
 }
 
-.pokemonCard:hover .detalhes {
-      display: inline;
-      animation: details 1s;
-      transition: 1s;
-}
-
-
-
-
 .pokemonCard .id {
     text-align: center;
     font-size: 18px;
@@ -189,9 +196,8 @@ header #content {
     margin-bottom: 15px;
 }
 
-
 .pokemonCard h3 {
-    
+
     font-size: 30px;
     text-align: center;
     font-weight: 400;
@@ -200,11 +206,14 @@ header #content {
 }
 
 img.pokeImage {
-    width: 100%;
+    width: 90%;
+    /* background:red; */
 }
 
-
-
+.imageArea{
+    margin-bottom: 15px;
+    text-align: center;
+}
 
 footer {
 
@@ -219,24 +228,14 @@ footer {
     backdrop-filter: blur(20px);
 }
 
-
-
-
-
-.status {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-}
-
 .tipo {
 
-    min-width: 50px;
+    width: 50px;
     text-align: center;
     color: white;
     font-weight: 700;
-    background-color: green;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-right: 5px;
     padding: 8px;
 }
 
@@ -282,7 +281,40 @@ footer {
 
 
 
+select#filter{
+    border-radius:5px ;
+    padding: 5px;
+    color: #313131;
+    font-family: 700;
+}
 
+#filterArea{
+
+   
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 25%;
+    display: flex;
+    gap:10px;
+}
+
+#filter option{
+    font-weight: 700;
+    color: #313131;
+}
+
+#filtrar{
+    width: 100px;
+   
+    background-color: #091a9e;
+    cursor: pointer;
+    font-weight: 700;
+    border: #091a9e solid 1px;
+    color: #FFF;
+    height: 30px;
+    line-height: 30px;
+    
+}
 
 /* estilização por tipo */
 

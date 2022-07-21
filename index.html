@@ -8,11 +8,9 @@
 
     <link rel="stylesheet" href="estilo.css">
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;700&display=swap" rel="stylesheet">
 
     <title>Pokedex</title>
 </head>
@@ -39,8 +37,47 @@
                 </button>
             </form>
 
+            <div id="filterArea">
+                <select id="filter">
+                    <option value=""> -- filter by type --</option>
 
+                    <option>Fire</option>
 
+                    <option>Water</option>
+
+                    <option>Grass </option>
+
+                    <option>Flying</option>
+
+                    <option>Fighting</option>
+
+                    <option>Poison</option>
+
+                    <option>Electric</option>
+
+                    <option>Ground</option>
+
+                    <option>Rock</option>
+
+                    <option>Psychic</option>
+
+                    <option>Ice</option>
+
+                    <option>Bug </option>
+
+                    <option>Ghost</option>
+
+                    <option>Steel</option>
+
+                    <option>Dragon</option>
+
+                    <option>Dark</option>
+
+                    <option>Fairy</option>
+                </select>
+
+                <button id="filtrar">Filter</button>
+            </div>
             <div id="pokemonArea">
 
 
@@ -48,7 +85,7 @@
 
         </main>
 
-        <div id = "buttonArea">
+        <div id="buttonArea">
             <button id="carregarMais" onclick="pokemons.loadMore()"> Carregar mais</button>
         </div>
 
