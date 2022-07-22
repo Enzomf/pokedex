@@ -318,6 +318,12 @@ select#filter{
     
 }
 
+#git{
+    margin-left: 10px;
+    width: 25px;
+}
+
+
 /* estilização por tipo */
 
 .fire {

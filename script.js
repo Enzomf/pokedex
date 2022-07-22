@@ -139,7 +139,7 @@ class Pokemon {
 
     if (tipo) {
       this.minimo = 1;
-      this.maximo = 150;
+      this.maximo = 151;
 
       this.pokemonList.length = 0;
       await this.getPokemons(1);
@@ -149,10 +149,11 @@ class Pokemon {
       );
       
       this.pokemonList.map(pokemon =>{
-       let controle = pokemon.types.length
+      
+        let controle = pokemon.types.length
 
        if(controle === 2 && pokemon.types[1].type.name == tipo ){
-            console.log(filter.push(pokemon))
+            filter.push(pokemon)
        }
        
       })
